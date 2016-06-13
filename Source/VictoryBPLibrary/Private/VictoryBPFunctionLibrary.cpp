@@ -894,8 +894,10 @@ void UVictoryBPFunctionLibrary::VictoryRemoveAxisKeyBind(FVictoryInputAxis ToRem
 	  
 	bool Found = false;
 	for(int32 v = 0; v < Axi.Num(); v++)
-	{
-		if(Axi[v].Key == ToRemove.Key)
+	{	
+		//Check for the same key and the same Axis Name (you don't want to remove all the key that are the same)
+		if(Axi[v].Key == ToRemove.Key
+		&& Axi[v].AxisName.ToString() == ToRemove.AxisName)
 		{
 			Found = true;
 			Axi.RemoveAt(v);
@@ -943,7 +945,9 @@ void UVictoryBPFunctionLibrary::VictoryRemoveActionKeyBind(FVictoryInput ToRemov
 	bool Found = false;
 	for(int32 v = 0; v < Actions.Num(); v++)
 	{
-		if(Actions[v].Key == ToRemove.Key)
+		//Check for the same key and the same Action Name (you don't want to remove all the key that are the same)
+		if(Actions[v].Key == ToRemove.Key
+		&&&& Axi[v].ActionName.ToString() == ToRemove.ActionName))
 		{
 			Found = true;
 			Actions.RemoveAt(v);
