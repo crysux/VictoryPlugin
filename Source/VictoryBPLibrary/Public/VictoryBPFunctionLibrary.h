@@ -328,6 +328,8 @@ class VICTORYBPLIBRARY_API UVictoryBPFunctionLibrary : public UBlueprintFunction
 	static void VictoryGetAllAxisAndActionMappingsForKey(FKey Key, TArray<FVictoryInput>& ActionBindings, TArray<FVictoryInputAxis>& AxisBindings);
 	
 	//	Axis Mapping
+	UFUNCTION(BlueprintPure, Category ="VictoryBPLibrary |Key Rebinding")
+	static FVictoryInputAxis VictoryGetAllAxisBindingFiltered(TArray<FVictoryInputAxis>& Bindings, TArray<FString> AxisToFilter);
 	UFUNCTION(BlueprintPure, Category = "VictoryBPLibrary|Key Rebinding")
 	static FVictoryInputAxis VictoryGetVictoryInputAxis(const FKeyEvent& KeyEvent);
 	
@@ -349,6 +351,8 @@ class VICTORYBPLIBRARY_API UVictoryBPFunctionLibrary : public UBlueprintFunction
 	
 	
 	//	Action Mapping
+	UFUNCTION(BlueprintPure, Category ="VictoryBPLibrary |Key Rebinding")
+	static FVictoryInput VictoryGetAllActionBindingFiltered(TArray<FVictoryInputAxis>& Bindings, TArray<FString> ActionToFilter);
 	UFUNCTION(BlueprintPure, Category = "VictoryBPLibrary|Key Rebinding")
 	static FVictoryInput VictoryGetVictoryInput(const FKeyEvent& KeyEvent);
  
