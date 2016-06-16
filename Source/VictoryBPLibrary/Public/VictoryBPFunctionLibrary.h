@@ -358,7 +358,7 @@ class VICTORYBPLIBRARY_API UVictoryBPFunctionLibrary : public UBlueprintFunction
 	UFUNCTION(BlueprintCallable, Category = "VictoryBPLibrary| Key Rebinding")
 		static FVictoryInput AddInputAction(FName ActionNameToAdd, FKey NewActionKey);
 	UFUNCTION(BlueprintPure, Category ="VictoryBPLibrary |Key Rebinding")
-	static void VictoryGetAllActionBindingFiltered(TArray<FVictoryInputAxis>& Bindings, TArray<FString> ActionToFilter);
+	static void VictoryGetAllActionBindingFiltered(TArray<FVictoryInput>& Bindings, TArray<FString> ActionToFilter);
 	UFUNCTION(BlueprintPure, Category = "VictoryBPLibrary|Key Rebinding")
 	static FVictoryInput VictoryGetVictoryInput(const FKeyEvent& KeyEvent);
  
